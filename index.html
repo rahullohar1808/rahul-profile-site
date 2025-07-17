@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rahul Lohar | Profile & Company</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Poppins', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .flip-card {
+      width: 450px;
+      height: 600px;
+      perspective: 1500px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s ease;
+      transform-style: preserve-3d;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+    }
+
+    .flip-card.flip .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 40px 30px;
+      border-radius: 15px;
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      overflow-y: auto;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .profile {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 25px;
+      border: 4px solid #e1306c;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #ffb6c1;
+    }
+
+    .bio {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #ddd;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .social a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social a:hover {
+      color: #e1306c;
+    }
+
+    .insta-logo {
+      width: 30px;
+      height: 30px;
+      filter: drop-shadow(0 0 2px #e1306c);
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      text-align: left;
+      color: #ffd700;
+    }
+
+    .company-name {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #ffb600;
+    }
+
+    .company-tagline {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #ffe066;
+    }
+
+    .product-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #fff8dc;
+    }
+
+    .company-address {
+      font-size: 14px;
+      color: #f0e68c;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 500px) {
+      .flip-card {
+        width: 100%;
+        height: 700px;
+      }
+      .profile {
+        width: 150px;
+        height: 150px;
+      }
+      .title {
+        font-size: 28px;
+      }
+      .subtitle {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flip-card" onclick="this.classList.toggle('flip')" title="Click to flip card">
+    <div class="flip-card-inner">
+      <!-- Front Side -->
+      <section class="flip-card-front">
+        <img class="profile" src="photo/IMG_20250712_190954.jpg" alt="Rahul Lohar" />
+        <h1 class="title">Rahul Lohar</h1>
+        <p class="subtitle">Jr. Software Developer</p>
+        <p class="bio">
+          Rahul Lohar is a professional software developer based in Jaipur, India. Dedicated to delivering high-quality, scalable software solutions that transform ideas into reality. Skilled in full-stack development with expertise in JavaScript, Python, React, Node.js, and cloud platforms. Passionate about writing clean, maintainable code and solving complex problems with innovative approaches. Experienced in Agile teams and committed to continuous learning and tech community contributions.
+        </p>
+        <div class="social">
+          <a href="https://www.instagram.com/rahull._2007" target="_blank" rel="noopener noreferrer">
+            <img class="insta-logo" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Logo" />
+            @rahull._2007
+          </a>
+        </div>
+      </section>
+
+      <!-- Back Side -->
+      <section class="flip-card-back">
+        <h2 class="company-name">Tirupati Software Infotech Pvt. Ltd.</h2>
+        <p class="company-tagline">
+          Algo Trader 📊 | Software Developer 💻<br />
+          Building Wealth with Code & Charts 💰<br />
+          FinTech • Automation • Self-Made Visionary 🚀
+        </p>
+        <h3 style="color:#fff;">Our Products:</h3>
+        <ul class="product-list">
+          <li>Ultimate HIMS Pro+</li>
+          <li>Enterprises HIMS Pro+</li>
+          <li>Doc-Clinic Pro+</li>
+          <li>Lab Pro+</li>
+          <li>Radio Pro+</li>
+          <li>Pharma Pro+</li>
+          <li>Blood Bank Pro+</li>
+          <li>A/c Software Pro+</li>
+        </ul>
+        <address class="company-address">
+          Tirupati Software Infotech Pvt Ltd,<br />
+          244-A, Ravindra Nagar-A Airport Road,<br />
+          Jagatpura, Teh, Sanganer, Jaipur,<br />
+          Rajasthan 302022<br />
+          Jaipur, Rajasthan 302017
+        </address>
+      </section>
+    </div>
+  </div>
+
+</body>
+</html>
