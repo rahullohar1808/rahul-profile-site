@@ -316,46 +316,48 @@
         </div>
 
         <!-- Instructions -->
-        
+        <div class="photo-instructions">
+            To add your own photos, open the browser console (right-click -> Inspect -> Console) and use the addPhoto function like this: addPhoto(cardIndex, 'path/to/your/image.jpg');
+        </div>
+
         <!-- Desktop Grid Gallery -->
         <div class="gallery-grid" id="desktopGallery">
             <!-- Card 1 -->
-            <div class="memory-card">
+            <div class="memory-card" data-message="You looked like a dream here 😍">
+                <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0034.jpg' alt='First date photo'>">📸</div>
                 <div class="tooltip">You looked like a dream here 😍</div>
-                <div class="memory-image placeholder" style="">📸</div>
                 <div class="memory-message">First date magic ✨</div>
             </div>
             <!-- Card 2 -->
-            <div class="memory-card">
+            <div class="memory-card" data-message="My heart still skips a beat... 💓">
+                <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0035.jpg' alt='Smile photo'>">💕</div>
                 <div class="tooltip">My heart still skips a beat... 💓</div>
-                <div class="memory-image placeholder" style="">💕</div>
                 <div class="memory-message">That smile that stole my heart</div>
             </div>
             <!-- Card 3 -->
-            <div class="memory-card">
+            <div class="memory-card" data-message="This moment is still my favorite 🌸">
+                <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0036.jpg' alt='Adventure photo'>">🌹</div>
                 <div class="tooltip">This moment is still my favorite 🌸</div>
-                <div class="memory-image placeholder" style="">🌹</div>
                 <div class="memory-message">Our first adventure together</div>
             </div>
             <!-- Card 4 -->
-            <div class="memory-card">
+            <div class="memory-card" data-message="Your eyes >>> the universe 🌌">
+                <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0037.jpg' alt='Eyes photo'>">✨</div>
                 <div class="tooltip">Your eyes >>> the universe 🌌</div>
-                <div class="memory-image placeholder" style="">✨</div>
                 <div class="memory-message">Lost in your beautiful eyes</div>
             </div>
             <!-- Card 5 -->
-            <div class="memory-card">
+            <div class="memory-card" data-message="Perfect doesn't exi... wait, you do 💫">
+                <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0038.jpg' alt='Perfect moment photo'>">💖</div>
                 <div class="tooltip">Perfect doesn't exi... wait, you do 💫</div>
-                <div class="memory-image placeholder" style="">💖</div>
                 <div class="memory-message">Perfectly imperfect moments</div>
             </div>
             <!-- Card 6 -->
-            <div class="memory-card">
+            <div class="memory-card" data-message="Still can't believe you're mine 🥰">
+                <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0040.jpg' alt='Butterflies photo'>">🦋</div>
                 <div class="tooltip">Still can't believe you're mine 🥰</div>
-                <div class="memory-image placeholder" style="">🦋</div>
                 <div class="memory-message">Butterflies every single time</div>
             </div>
-           
         </div>
 
         <!-- Mobile Carousel Gallery -->
@@ -363,35 +365,34 @@
             <div class="carousel-container">
                 <!-- Card 1 -->
                 <div class="memory-card" data-message="You looked like a dream here 😍">
-                    <div class="memory-image placeholder" style="">📸</div>
+                    <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0034.jpg' alt='First date photo'>">📸</div>
                     <div class="memory-message">First date magic ✨</div>
                 </div>
                 <!-- Card 2 -->
                 <div class="memory-card" data-message="My heart still skips a beat... 💓">
-                    <div class="memory-image placeholder" style="">💕</div>
+                    <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0035.jpg' alt='Smile photo'>">💕</div>
                     <div class="memory-message">That smile that stole my heart</div>
                 </div>
                 <!-- Card 3 -->
                 <div class="memory-card" data-message="This moment is still my favorite 🌸">
-                    <div class="memory-image placeholder" style="">🌹</div>
+                    <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0036.jpg' alt='Adventure photo'>">🌹</div>
                     <div class="memory-message">Our first adventure together</div>
                 </div>
                 <!-- Card 4 -->
                 <div class="memory-card" data-message="Your eyes >>> the universe 🌌">
-                    <div class="memory-image placeholder" style="">✨</div>
+                    <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0037.jpg' alt='Eyes photo'>">✨</div>
                     <div class="memory-message">Lost in your beautiful eyes</div>
                 </div>
                 <!-- Card 5 -->
                 <div class="memory-card" data-message="Perfect doesn't exi... wait, you do 💫">
-                    <div class="memory-image placeholder" style="">💖</div>
+                    <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0038.jpg' alt='Perfect moment photo'>">💖</div>
                     <div class="memory-message">Perfectly imperfect moments</div>
                 </div>
                 <!-- Card 6 -->
                 <div class="memory-card" data-message="Still can't believe you're mine 🥰">
-                    <div class="memory-image placeholder" style="">🦋</div>
+                    <div class="memory-image placeholder" style="<img src='Photos/IMG-20250804-WA0040.jpg' alt='Butterflies photo'>">🦋</div>
                     <div class="memory-message">Butterflies every single time</div>
                 </div>
-                
             </div>
         </div>
 
@@ -482,36 +483,32 @@
             const desktopImages = document.querySelectorAll('#desktopGallery .memory-image');
             const mobileImages = document.querySelectorAll('#mobileGallery .memory-image');
             
-            if (cardIndex >= 1 && cardIndex <= 8) {
+            if (cardIndex >= 1 && cardIndex <= 6) {
                 const index = cardIndex - 1;
                 
                 // Update desktop version
                 if (desktopImages[index]) {
-                    desktopImages[index].style.backgroundImage = url('${imageUrl}');
+                    desktopImages[index].style.backgroundImage = `url(${imageUrl})`;
                     desktopImages[index].classList.remove('placeholder');
                     desktopImages[index].textContent = '';
                 }
                 
                 // Update mobile version
                 if (mobileImages[index]) {
-                    mobileImages[index].style.backgroundImage = url('${imageUrl}');
+                    mobileImages[index].style.backgroundImage = `url(${imageUrl})`;
                     mobileImages[index].classList.remove('placeholder');
                     mobileImages[index].textContent = '';
                 }
             }
         }
 
-        // Example usage (you can call these in the browser console):
-         addPhoto(1, 'pic1.jpg');
-            addPhoto(2, 'pic2.jpg');
-               addPhoto(3, 'pic3.jpg');
-                  addPhoto(4, 'pic4.jpg');
-                     addPhoto(5, 'pic4.jpg');
-                        addPhoto(6, 'pic5.jpg');
-                           addPhoto(7, 'pic6.jpg');
-                              addPhoto(8, 'pic7.jpg');
-        // addPhoto(2, 'path/to/your/second-photo.jpg');
-        // etc.
+        // Add photos to the gallery cards
+        addPhoto(1, 'Photos/IMG-20250804-WA0034.jpg'); // First date photo
+        addPhoto(2, 'Photos/IMG-20250804-WA0035.jpg'); // Smile photo
+        addPhoto(3, 'Photos/IMG-20250804-WA0036.jpg'); // Adventure photo
+        addPhoto(4, 'Photos/IMG-20250804-WA0037.jpg'); // Eyes photo (Note: This path seems incorrect, please verify)
+        addPhoto(5, 'Photos/IMG-20250804-WA0038.jpg'); // Perfect moment photo
+        addPhoto(6, 'Photos/IMG-20250804-WA0040.jpg); // Butterflies photo
     </script>
 </body>
 </html>
